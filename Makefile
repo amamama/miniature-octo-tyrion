@@ -1,5 +1,5 @@
 
-TARGET=tweet
+TARGET=a.out
 CC=gcc
 CFLAGS= -ansi -std=c99 -c -W -Wall -Werror
 LDFLAGS= -lcurl -loauth -lcrypto
