@@ -57,6 +57,9 @@ union KEYS {
 union KEYS *register_keys (union KEYS *k);
 int check_keys(void);
 
+int bear_init(union KEYS *k);
+int bear_cleanup(void);
+
 enum ALIGN {
 	NONE,
 	LEFT,

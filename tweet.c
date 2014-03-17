@@ -42,6 +42,16 @@ int check_keys(void) {
 	return keys->keys_array[0]&&keys->keys_array[1]&&keys->keys_array[2]&&keys->keys_array[3];
 }
 
+int bear_init(union KEYS *k) {
+	register_keys(k);
+	return curl_global_init(CURL_GLOBAL_DEFAULT);
+}
+
+int bear_cleanup(void) {
+	curl_global_cleanup();
+	return 0;
+}
+
 static size_t write_data(char *buffer, size_t size, size_t nmemb, void *rep) {
 	*(buffer + size * nmemb) = '\0';
 	alloc_strcat((char**)rep, buffer);
